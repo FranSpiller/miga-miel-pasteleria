@@ -1,0 +1,15 @@
+*ESTOS COMANDOS SON PARA BORRAR LA MEMORIA DE LA PAGINA COMO BORRARLO POR COMPLETO O BORRAR DESDE EL PUNTO DE CONTROL*
+
+REINICIAR PAGINA ESTADO NORMAL:
+
+localStorage.removeItem('miga_miel_demo_v3');
+sessionStorage.removeItem('miga_miel_admin');
+location.reload();
+
+BORRAR TODOS LOS PEDIDOS
+
+const datos = JSON.parse(localStorage.getItem('miga_miel_demo_v3'));
+datos.orders = [];
+datos.nextId = 1001;
+localStorage.setItem('miga_miel_demo_v3', JSON.stringify(datos));
+location.reload();
